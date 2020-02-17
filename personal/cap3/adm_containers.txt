@@ -1,0 +1,62 @@
+sudo mkdir -pv /var/local/mysql
+sudo semanage fcontext -a -t container_file_t '/var/local/mysql(/.*)?'
+sudo restorecon -R /var/local/mysql
+sudo chown -Rv 27:27 /var/local/mysql
+sudo podman pull rhscl/mysql-57-rhel7
+
+sudo podman run --name mysql-1 -d -v /var/local/mysql:/var/lib/mysql/data -e MYSQL_USER=user1 -e MYSQL_PASSWORD=mypa55 -e MYSQL_DATABASE=items -e MYSQL_ROOT_PASSWORD=r00tpa55 rhscl/mysql-57-rhel7
+
+
+sudo podman inspect -f '{{ .NetworkSettings.IPAddress }}' mysql-1
+
+mysql -uuser1 -h CONTAINER_IP -pmypa55 items < /home/student/DO180/labs/manage-review/db.sql
+
+3.3
+
+sudo podman exec -it mysql-1 /opt/rh/rh-mysql57/root/usr/bin/mysql -uroot items -e "SELECT * FROM Item"
+
+
+podman stop mysql-1
+
+
+sudo podman run --name mysql-2 -d -v /var/local/mysql:/var/lib/mysql/data -p 13306:3306 -e MYSQL_USER=user1 -e MYSQL_PASSWORD=mypa55 -e MYSQL_DATABASE=items -e MYSQL_ROOT_PASSWORD=r00tpa55 rhscl/mysql-57-rhel7
+
+
+sudo podman ps
+
+
+sudo podman ps -a > /tmp/my-containers
+
+sudo podman exec -it mysql-2 /bin/bash
+
+mysql -uroot
+
+show databases;
+
+use items;
+
+show tables;
+
+SELECT * FROM Item;
+
+exit 
+
+exit
+
+
+mysql -uuser1 -h localhost -pmypa55 -P13306 items
+
+insert into Item (description, done) values ('Finished lab', 1);
+
+exit
+
+sudo podman rm mysql-1
+
+lab manage-review grade
+
+lab manage-review finish
+
+
+
+
+
