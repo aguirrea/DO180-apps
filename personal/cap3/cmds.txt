@@ -1,0 +1,138 @@
+    1  git
+    2  sudo yum install git
+    3  logout
+    4  cap /proc/cpuinfo 
+    5  cat /proc/cpuinfo 
+    6  lab-configure 
+    7  git clone https://github.com/aguirrea/DO180-apps.git
+    8  pwd
+    9  ls
+   10  cd DO180-apps/
+   11  ls
+   12  vi README.md 
+   13  cd example/
+   14  ls
+   15  vi README.md 
+   16  cd ..
+   17  ls
+   18  git status
+   19  pwd
+   20  cd DO180-apps/
+   21  ls
+   22  pwd
+   23  head README.md 
+   24  podman
+   25  lab manage-lifecycle start 
+   26  sudo podman run --name mysql-db rhscl/mysql-57-rhel7
+   27  sudo podman run --name mysql -d -e MYSQL_USER=user1 -e MYSQL_PASSWORD=mypa55 -e MYSQL_DATABASE=items -e MYSQL_ROOT_PASSWORD=r00tpa55 rhscl/mysql-57-rhel7
+   28  sudo podman ps
+   29  sudo podman inspect -f '{{ .NetworkSettings.IPAddress }}' mysql
+   30  mysql -uuser1 -h 10.88.0.3 -p items
+   31  mysql -uuser1 -h 10.88.0.3 -p items','
+   32  mysql -uuser1 -h 10.88.0.3 -p items','+++
+   33  mysql -uuser1 -h 10.88.0.3 -p items
+   34  exit
+   35  mysql -uuser1 -h 10.88.0.3 -p items
+   36  sudo podman inspect -f '{{ .NetworkSettings.IPAddress }}' mysql
+   37  mysql -uuser1 -h 10.88.0.3 -p items
+   38  SUDO PODMAN RUN --NAME MYSQL-2 -IT RHSCL/MYSQL-57-RHEL7 /BIN/BASH
+   39  sudo podman run --name mysql-2 -it rhsck/mysql-57-rhel7 /bin/bash
+   40  sudo podman run --name mysql-2 -it rhscl/mysql-57-rhel7 /bin/bash
+   41  docker ps
+   42  podman ps
+   43  sudo podman ps
+   44  podman run eba9c0470844
+   45  sudo podman run eba9c0470844
+   46  sudo podman start eba9c0470844
+   47  mysql -uroot
+   48  sudo mysql -uroot
+   49  podman ps
+   50  sudo podman ps
+   51  SUDO PODMAN RUN --NAME MYSQL-2 -IT RHSCL/MYSQL-57-RHEL7 /BIN/BASH
+   52  sudo podman run --name mysql-2 -it rhscl/mysql-57-rhel7 /bin/bash
+   53  podman ps
+   54  sudo podman ps
+   55  sudo podman stop eba9c0470844
+   56  sudo podman run --name mysql-2 -it rhscl/mysql-57-rhel7 /bin/bash
+   57  podman rm 8293d2199dc69602aa2c9fbb69df39ff1e2cd4811789e129230fe95c40d427b6
+   58  sudo podman rm 8293d2199dc69602aa2c9fbb69df39ff1e2cd4811789e129230fe95c40d427b6
+   59  sudo podman run --name mysql-2 -it rhscl/mysql-57-rhel7 /bin/bash
+   60  lab container-create start
+   61  SUDO PODMAN RUN --NAME MYSQL-BASIC -E mysql_user=USER1 -E mysql_password=MYPA55 -E mysql_database=ITEMS -E mysql_root_password=R00TPA55 -D RHSCL/MYSQL-57-RHEL7:5.7-3.14
+   62  sudo podman run --name mysql-basic -e MYSQL_USER=user1 -e MYSQL_PASSWORD=mypa55 -e MYSQL_DATABASE=items -e MYSQL_ROOT_PASSWORD=r00tpa55 -d rhscl/mysql-57-rhel7:5.7-3.14
+   63  sudo podman ps --format "{{.ID}} {{.Image}} {{.Names}}"
+   64  sudo podman exec -it mysql-basic /bin/bash
+   65  lab container-create finish
+   66  sudo podman run --name mysql-db rhscl/mysql-57-rhel7
+   67  lab manage-lifecycle start
+   68  sudo podman logs mysql-db
+   69  sudo podman run --name mysql -d -e MYSQL_USER=user1 -e MYSQL_PASSWORD=mypa55 -e MYSQL_DATABASE=items -e MYSQL_ROOT_PASSWORD=r00tpa55 rhscl/mysql-57-rhel7
+   70  podman stop eba9c0470844c1a8d5c34232a3f2910984d1789ba07d24c2b5a6f8cc0c75a14f
+   71  podman stop mysql
+   72  sudo podman stop mysql
+   73  podman rm eba9c0470844c1a8d5c34232a3f2910984d1789ba07d24c2b5a6DDDDDDDDDDDDDDDDDDDDDf8cc0c75a14f
+   74  sudo podman rm eba9c0470844c1a8d5c34232a3f2910984d1789ba07d24c2b5a6f8cc0c75a14f
+   75  sudo podman run --name mysql -d -e MYSQL_USER=user1 -e MYSQL_PASSWORD=mypa55 -e MYSQL_DATABASE=items -e MYSQL_ROOT_PASSWORD=r00tpa55 rhscl/mysql-57-rhel7
+   76  sudo podman ps
+   77  sudo podman inspect -f '{{ .NetworkSettings.IPAddress }}' mysql
+   78  vi README.m d
+   79  mysql -uuser1 -h 10.88.0.7 -p items
+   80  ()1)1; ,
+   81  cat DO180/solutions/manage-lifecycle/db.sql 
+   82  cat DO180/solutions/container-create/create_table.txt 
+   83  ());
+   84  5~5~5~5~5~
+   85  5~5~5~5~5
+   86  podman ps
+   87  sudo podman ps
+   88  vi README.m d
+   89  mysql -uuser1 -h 10.88.0.6 -p items
+   90  mysql -uuser1 -h 10.88.0.7 -p items
+   91  sudo podman inspect -f '{{ .NetworkSettings.IPAddress }}' mysql
+   92  mysql -uuser1 -h 10.88.0.7 -p items
+   93  podman ps
+   94  sudo podman ps
+   95  mysql -uuser1 -h 10.88.0.7 -p items
+   96  SUDO PODMAN RUN --NAME MYSQL-2 -IT RHSCL/MYSQL-57-RHEL7 /BIN/BASH
+   97  sudo podman run --name mysql-2 -it rhscl/mysql-57-rhel7 /bin/bash
+   98  mysql -uroot
+   99  sudo podman run --name mysql-2 -it rhscl/mysql-57-rhel7 /bin/bash
+  100  podman rm c33833d2958cbb53104914de05350b1367e10ac701850c177901a1ea41059a7f
+  101  sudo podman rm c33833d2958cbb53104914de05350b1367e10ac701850c177901a1ea41059a7f
+  102  sudo podman run --name mysql-2 -it rhscl/mysql-57-rhel7 /bin/bash
+  103  sudo podman ps -a --format="table {{.ID}} {{.Names}} {{.Status}}"
+  104  sudo podman exec mysql /bin/bash -c 'mysql -uuser1 -p -e "selec * from items.Projects;"'
+  105  sudo podman exec mysql /bin/bash -c 'mysql -uuser1 -p -e "select * from items.Projects;"'
+  106  lab manage-lifecycle finish
+  107  sudo mkdir /var/dbfiles
+  108  sudo chown -R 27:27 /var/dbfiles
+  109  sudo semanage fcontext -a -t container_file_t '/var/dbfiles(/.*)?'
+  110  sudo restorecon -Rv /var/dbfiles
+  111  SUDO PODMAN RUN -V /VAR/DBFILES:/VAR/LIB/MYSQL RHMAP47/ MYSQL
+  112  sudo restorecon -R /var/local/mysql
+  113  sudo mkdir -pv /var/local/mysql
+  114  sudo semanage fcontext -a -t container_file_t '/var/local/mysql(/.*)?'
+  115  sudo restorecon -R /var/local/mysql
+  116  sudo chown -Rv 27:27 /var/local/mysql
+  117  sudo podman pull rhscl/mysql-57-rhel7
+  118  sudo podman inspect -f '{{ .NetworkSettings.IPAddress }}' mysql-1
+  119  sudo podman run --name mysql-1 -d -v /var/local/mysql:/var/lib/mysql/data -e MYSQL_USER=user1 -e MYSQL_PASSWORD=mypa55 -e MYSQL_DATABASE=items -e MYSQL_ROOT_PASSWORD=r00tpa55 rhscl/mysql-57-rhel7
+  120  sudo podman inspect -f '{{ .NetworkSettings.IPAddress }}' mysql-1
+  121  mysql -uuser1 -h CONTAINER_IP -pmypa55 items < /home/student/DO180/labs/manage-review/db.sql
+  122  mysql -uuser1 -h 10.88.0.11 -pmypa55 items < /home/student/DO180/labs/manage-review/db.sql
+  123  sudo podman exec -it mysql-1 /opt/rh/rh-mysql57/root/usr/bin/mysql -uroot items -e "SELECT * FROM Item"
+  124  podman stop mysql-1
+  125  sudo podman stop mysql-1
+  126  sudo podman run --name mysql-2 -d -v /var/local/mysql:/var/lib/mysql/data -p 13306:3306 -e MYSQL_USER=user1 -e MYSQL_PASSWORD=mypa55 -e MYSQL_DATABASE=items -e MYSQL_ROOT_PASSWORD=r00tpa55 rhscl/mysql-57-rhel7
+  127  sudo podman ps
+  128  sudo podman ps -a > /tmp/my-containers
+  129  cat /tmp/my-containers 
+  130  sudo podman exec -it mysql-2 /bin/bash
+  131  mysql -uuser1 -h localhost -pmypa55 -P13306 items
+  132  mysql --uuser1 -h 172.25.250.254 -pmypa55 -P13306 items
+  133  mysql -uuser1 -h 172.25.250.254 -pmypa55 -P13306 items
+  134  sudo podman rm mysql-1
+  135  lab manage-review grade
+  136  lab manage-review finish
+  137  history
+  138  history > cmds.txt
