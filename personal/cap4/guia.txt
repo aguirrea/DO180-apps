@@ -1,0 +1,39 @@
+sudo podman login quay.io
+
+sudo podman run -d --name official-httpd -p 8180:80 redhattraining/httpd-parent
+
+
+sudo podman exec -it official-httpd /bin/bash
+echo "DO180 Page" > /var/www/html/do180.html
+
+exit
+
+curl 127.0.0.1:8180/do180.html
+
+sudo podman inspect -f "{{range .Mounts}}{{println .Destination}}{{end}}" official-httpd
+
+
+sudo podman diff official-httpd
+
+sudo podman stop official-httpd
+
+
+sudo podman commit -a 'Your Name' official-httpd do180-custom-httpd
+
+sudo podman image
+
+sudo podman tag do180-custom-httpd quay.io/${RHT_OCP4_QUAY_USER}/do180-custom-httpd:v1.0
+
+
+sudo podman images
+
+
+sudo podman push quay.io/${RHT_OCP4_QUAY_USER}/do180-custom-httpd:v1.0
+
+sudo podman pull -q quay.io/${RHT_OCP4_QUAY_USER}/do180-custom-httpd:v1.0
+
+sudo podman run -d --name test-httpd -p 8280:80 ${RHT_OCP4_QUAY_USER}/do180-custom-httpd:v1.0
+
+curl http://localhost:8280/do180.html
+
+lab image-operations finish
