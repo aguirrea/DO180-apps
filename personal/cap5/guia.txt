@@ -1,0 +1,44 @@
+lab dockerfile-create start
+
+vim /home/student/DO180/labs/dockerfile-create/Dockerfile
+
+FROM ubi7/ubi:7.7
+
+MAINTAINER Your Name <youremail>
+
+LABEL description="A custom Apache container based on UBI 7"
+
+RUN yum install -y httpd && \
+yum clean all
+
+RUN echo "Hello from Dockerfile" > /usr/share/httpd/noindex/index.html
+
+EXPOSE 80
+
+ENTRYPOINT ["httpd", "-D", "FOREGROUND"]
+
+FROM ubi7/ubi:7.7
+MAINTAINER Andrés <aguirrea@gmail.com>
+LABEL description="A basic Apache container on RHEL 7 UBI"
+RUN yum install -y httpd && \
+yum clean all
+RUN echo "Hello from Dockerfile" > /usr/share/httpd/noindex/index.html
+EXPOSE 80
+ENTRYPOINT ["httpd", "-D", "FOREGROUND"]
+
+
+cd /home/student/DO180/labs/dockerfile-create
+
+sudo podman build --layers=false -t do180/apache .
+
+sudo podman images
+
+sudo podman run --name lab-apache -d -p 10080:80 do180/apache
+
+sudo podman ps
+
+curl 127.0.0.1:10080
+
+lab dockerfile-create finish
+
+
