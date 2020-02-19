@@ -1,0 +1,20 @@
+lab openshift-resources start
+source /usr/local/etc/ocp4.config
+oc login -u ${RHT_OCP4_DEV_USER} -p ${RHT_OCP4_DEV_PASSWORD} ${RHT_OCP4_MASTER_API}
+oc new-project ${RHT_OCP4_DEV_USER}-mysql-openshift
+oc new-app --docker-image=registry.access.redhat.com/rhscl/mysql-57-rhel7:latest --name=mysql-openshift -e MYSQL_USER=user1 -e MYSQL_PASSWORD=mypa55 -e MYSQL_DATABASE=testdb -e MYSQL_ROOT_PASSWORD=r00tpa55
+oc status
+oc get pods -o=wide
+oc describe pod mysql-openshift-1-glqrp
+oc get svc
+oc describe service mysql-openshift
+oc describe dc mysql-openshift
+oc expose service mysql-openshift
+oc get routes
+oc port-forward mysql-openshift-1-glqrp 3306:3306
+mysql -uuser1 -pmypa55 --protocol tcp -h localhost
+show databases;
+exit
+oc port-forward mysql-openshift-1-5qhg8 3306:3306
+oc delete project ${RHT_OCP4_DEV_USER}-mysql-openshift
+lab openshift-resources finish
